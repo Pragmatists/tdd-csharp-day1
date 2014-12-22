@@ -60,7 +60,7 @@ namespace NUnitIntroduction._4_Parameters
                     yield return new TestCaseData(1).Returns(false);
                     yield return new TestCaseData(18).Returns(true);
                     yield return new TestCaseData(117).Returns(true);
-                    yield return new TestCaseData(1200).Throws(typeof(PersonToOldException));
+                    yield return new TestCaseData(1200).Throws(typeof(PersonTooOldException));
                 }
             }
         }

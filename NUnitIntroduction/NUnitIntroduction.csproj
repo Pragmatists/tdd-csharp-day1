@@ -51,7 +51,7 @@
     <Compile Include="_1_VeryBasics\Calculator.cs" />
     <Compile Include="_2_FollowSpecs\ForumTest.cs" />
     <Compile Include="Common\Person.cs" />
-    <Compile Include="Common\PersonToOldException.cs" />
+    <Compile Include="Common\PersonTooOldException.cs" />
     <Compile Include="_3_Assertions\PersonConstraintsTest.cs" />
     <Compile Include="_3_Assertions\PersonTest.cs" />
     <Compile Include="_4_Parameters\Parameters.cs" />

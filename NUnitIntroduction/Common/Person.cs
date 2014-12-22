@@ -12,7 +12,7 @@ namespace NUnitIntroduction.Common
             get
             {
                 if (Age > 1000)
-                    throw new PersonToOldException();
+                    throw new PersonTooOldException();
                 return Age >= 18;
             }
         }

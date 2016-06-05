@@ -53,5 +53,13 @@ namespace NUnitIntroduction._3_Assertions
             Assert.AreEqual(10, person.Age);
             Assert.AreEqual(10, person.Fingers);
         }
+
+        [Test]
+        public void PersonCannotBeToOld()
+        {
+            // TODO: Ustaw wiek powyżej 1000 lat, aby asercja została spełniona
+            var person = new Person(1);
+            Assert.That(() => { var irrelevant = person.IsAdult; }, Throws.TypeOf<PersonTooOldException>());
+        }
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Assertions;
+﻿using Assertions;
 using NUnit.Framework;
 using NUnitIntroduction.Common;
 
@@ -52,6 +47,14 @@ namespace NUnitIntroduction._3_Assertions
             // TODO: Popraw implementację, aby test przeszedł
             Assert.AreEqual(10, person.Age);
             Assert.AreEqual(10, person.Fingers);
+        }
+
+        [Test]
+        public void PersonCannotBeToOld()
+        {
+            // TODO: Ustaw wiek powyżej 1000 lat, aby asercja została spełniona
+            var person = new Person(1);
+            Assert.Throws<PersonTooOldException>(() => { var irrelevant = person.IsAdult; });
         }
     }
 }

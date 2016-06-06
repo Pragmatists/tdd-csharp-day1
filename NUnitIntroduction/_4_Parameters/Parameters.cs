@@ -18,13 +18,13 @@ namespace NUnitIntroduction._4_Parameters
             Assert.AreEqual(isAdult, new Person(age).IsAdult);
         }
 
-        [TestCase(1, Result = false)]
-        [TestCase(0, Result = false)]
-        [TestCase(17, Result = false)]
-        [TestCase(18, Result = true)]
-        [TestCase(20, Result = true)]
-        [TestCase(117, Result = true)]
-        [TestCase(117, Ignore = true, Reason = "to be implemented")]
+        [TestCase(1, ExpectedResult = false)]
+        [TestCase(0, ExpectedResult = false)]
+        [TestCase(17, ExpectedResult = false)]
+        [TestCase(18, ExpectedResult = true)]
+        [TestCase(20, ExpectedResult = true)]
+        [TestCase(117, ExpectedResult = true)]
+        [TestCase(117, Ignore = "to be implemented")]
         public bool AdultsAreMoreThan18YearsOldWithResult(int age)
         {
             return new Person(age).IsAdult;
@@ -60,7 +60,6 @@ namespace NUnitIntroduction._4_Parameters
                     yield return new TestCaseData(1).Returns(false);
                     yield return new TestCaseData(18).Returns(true);
                     yield return new TestCaseData(117).Returns(true);
-                    yield return new TestCaseData(1200).Throws(typeof(PersonTooOldException));
                 }
             }
         }

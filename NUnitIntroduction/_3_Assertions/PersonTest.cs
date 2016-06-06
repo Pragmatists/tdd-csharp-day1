@@ -12,7 +12,7 @@ namespace NUnitIntroduction._3_Assertions
             var person = new Person(52);
 
             Assert.AreEqual(52, person.Age);
-            Assert.IsNullOrEmpty(person.Surname);
+            Assert.IsNull(person.Surname);
             // TODO: Napisz asercję, która sprawdzi, że wiek jest większy niż 18
         }
 

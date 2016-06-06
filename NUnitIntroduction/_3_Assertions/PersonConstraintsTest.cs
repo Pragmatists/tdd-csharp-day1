@@ -50,8 +50,8 @@ namespace NUnitIntroduction._3_Assertions
 
             // TODO: Dodaj parametr z komunikatem, aby było wiadomo, która asercja nie przechodzi.
             // TODO: Popraw implementację, aby test przeszedł
-            Assert.AreEqual(10, person.Age);
-            Assert.AreEqual(10, person.Fingers);
+            Assert.That(person.Age, Is.EqualTo(10), "age");
+            Assert.That(person.Fingers, Is.EqualTo(10), "fingers");
         }
 
         [Test]

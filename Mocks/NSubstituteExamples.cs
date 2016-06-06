@@ -1,6 +1,7 @@
 ﻿using System;
 using Moq;
 using NSubstitute;
+using NSubstitute.Core;
 using NUnit.Framework;
 
 namespace Mocks
@@ -34,19 +35,35 @@ namespace Mocks
         [Ignore("just an api illustration")]
         public void SettingUpWarehouse()
         {
-            var wareshouse = Substitute.For<Warehouse>();
-            wareshouse.HasInventory(Products.Ziemniaki, 50).Returns(true);
-            wareshouse.HasInventory(Products.Ziemniaki, Arg.Is<int>(x => x <= 50)).Returns(true);
-            wareshouse.HasInventory(Products.Ziemniaki, Arg.Any<int>()).Returns(x => x.Arg<int>() <= 50);
-
-
+            var warehouse = Substitute.For<Warehouse>();
+            warehouse.HasInventory(Products.Ziemniaki, 50).Returns(true);
+            warehouse.HasInventory(Products.Ziemniaki, Arg.Is<int>(x => x <= 50)).Returns(true);
+            warehouse.HasInventory(Products.Ziemniaki, Arg.Any<int>()).Returns(x => x.Arg<int>() <= 50);
         }
 
 
         [Test]
+        [Ignore("just an api illustration")]
         public void Verifications()
         {
-            
+            var userManager = Substitute.For<IUserManager>();
+            userManager.DidNotReceive().FindUserWithId(Arg.Any<int>());
+            userManager.Received().FindUserWithId(5);
+            userManager.Received(3).FindUserWithId(2);
+        }
+
+        [Test]
+        [Ignore("just an api illustration")]
+        public void SequenceVerification()
+        {
+            var warehouse = Substitute.For<Warehouse>();
+            var userManager = Substitute.For<IUserManager>();
+
+            Received.InOrder(() =>
+            {
+                userManager.FindUserWithId(1);
+                warehouse.Remove("product", 4);
+            });
         }
     }
 

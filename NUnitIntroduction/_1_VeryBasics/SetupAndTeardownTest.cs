@@ -12,7 +12,7 @@ namespace NUnitIntroduction._1_VeryBasics
          *    OneTimeSetUp, SetUp, OneTimeTearDown, TearDown?
          * -- Dlaczego metody [SetUp] i [TearDown] sa wywolywane dwa razy,
          *    a [OneTimeSetUp], [OneTimeTearDown] po razie?
-         * -- Nie doytkające metod testowych Test1 i Test2, zmień test tak,
+         * -- Nie doytkając metod testowych Test1 i Test2, zmień test tak,
          *    aby w obu testach wypisywała się wartość "counter = 42"
          */
         private int counter = 42;
